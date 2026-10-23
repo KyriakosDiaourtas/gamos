@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Κυριάκος & Βασιλική · 4.7.2027</title>
+<meta name="description" content="Γάμος Κυριάκου Διαούρτα & Βασιλικής Μανιού — Κυριακή 4 Ιουλίου 2027">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf6;
+    --card: #ffffff;
+    --ink: #1f1f1c;
+    --muted: #6d6a60;
+    --olive: #5f6e45;
+    --olive-soft: #eef0e6;
+    --gold: #b08e5c;
+    --line: #e6dfd0;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "EB Garamond", Georgia, serif; font-size: 19px; line-height: 1.45;
+  }
+  main { max-width: 520px; margin: 0 auto; padding: 40px 16px 56px; }
+
+  header { text-align: center; padding: 8px 0 4px; }
+  .kicker {
+    font-size: 13px; letter-spacing: .32em; text-transform: uppercase; color: var(--muted); margin: 0;
+  }
+  h1 {
+    font-weight: 400; font-style: italic; font-size: clamp(40px, 11vw, 56px);
+    line-height: 1.05; margin: 18px 0 14px;
+  }
+  h1 .amp { display: block; font-size: .6em; color: var(--gold); margin: 2px 0; }
+  .date { font-size: 22px; margin: 0; }
+  .time { color: var(--muted); font-size: 17px; margin: 2px 0 0; }
+
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 14px; margin: 30px 0;
+  }
+  .divider::before, .divider::after {
+    content: ""; height: 1px; width: 90px; background: var(--gold); opacity: .7;
+  }
+  .divider img { width: 44px; height: auto; }
+
+  section {
+    background: var(--card); border: 1px solid var(--line); border-radius: 4px;
+    padding: 26px 22px; margin-bottom: 22px; text-align: center;
+  }
+  h2 {
+    font-weight: 400; font-size: 13px; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 14px;
+  }
+  .church-img { width: 100%; height: auto; display: block; margin: 0 auto 16px; }
+  .venue { font-size: 21px; margin: 0; }
+  .place { color: var(--muted); margin: 2px 0 18px; }
+
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; min-height: 50px; padding: 12px 18px; margin-top: 10px;
+    font: inherit; font-size: 18px; text-decoration: none; cursor: pointer;
+    border-radius: 3px; border: 1px solid var(--olive); transition: background .15s, color .15s;
+  }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn-primary { background: var(--olive); color: #fff; }
+  .btn-primary:hover { background: #4f5d38; }
+  .btn-ghost { background: transparent; color: var(--olive); }
+  .btn-ghost:hover { background: var(--olive-soft); }
+
+  .intro { color: var(--muted); font-style: italic; margin: 0 0 18px; }
+  .acct {
+    text-align: left; border-top: 1px solid var(--line); padding: 18px 0 4px;
+  }
+  .acct:first-of-type { border-top: 0; padding-top: 4px; }
+  .acct .who { font-size: 19px; margin: 0; }
+  .acct .bank { color: var(--muted); font-size: 16px; margin: 0 0 8px; }
+  .iban-row { display: flex; gap: 8px; align-items: stretch; }
+  .iban {
+    flex: 1; min-width: 0; background: var(--olive-soft); border-radius: 3px;
+    padding: 10px 12px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 15px; letter-spacing: .02em; word-break: break-all; line-height: 1.4;
+  }
+  .copy {
+    flex: none; width: 92px; border: 1px solid var(--olive); background: #fff; color: var(--olive);
+    border-radius: 3px; font: inherit; font-size: 16px; cursor: pointer;
+  }
+  .copy.done { background: var(--olive); color: #fff; }
+  .or { color: var(--muted); font-style: italic; margin: 22px 0 4px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 16px; margin-top: 30px; }
+  footer p { margin: 4px 0; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
+    background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 3px; font-size: 16px;
+    opacity: 0; transition: opacity .2s, transform .2s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <p class="kicker">Με χαρά σας προσκαλούμε<br>στον γάμο μας</p>
+    <h1>Κυριάκος<span class="amp">&amp;</span>Βασιλική</h1>
+    <p class="date">Κυριακή, 4 Ιουλίου 2027</p>
+    <p class="time">Η τελετή στις 12:00</p>
+  </header>
+
+  <div class="divider"><img src="sprig.png" alt=""></div>
+
+  <section>
+    <h2>Η τελετή</h2>
+    <img class="church-img" src="church.jpg" alt="Ο Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος">
+    <p class="venue">Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος</p>
+    <p class="place">Μεταμόρφωση Αττικής</p>
+    <a class="btn btn-primary" href="https://maps.app.goo.gl/adzhtZ4EweFL3Ea49" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+      Οδηγίες στους Χάρτες
+    </a>
+  </section>
+
+  <section>
+    <h2>Κρατήστε την ημερομηνία</h2>
+    <a class="btn btn-primary" id="gcal" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>
+      Google Calendar
+    </a>
+    <a class="btn btn-ghost" href="gamos.ics" download="gamos-kyriakos-vasiliki.ics">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15l2.5 2.5 2.5-2.5"/></svg>
+      iPhone / Outlook
+    </a>
+  </section>
+
+  <section>
+    <h2>Ευχές</h2>
+    <p class="intro">Η παρουσία σας είναι το πιο όμορφο δώρο. Για όσους επιθυμούν να μας ευχηθούν και με αυτόν τον τρόπο:</p>
+
+    <!-- ΛΟΓΑΡΙΑΣΜΟΣ 1: αλλάξτε όνομα, τράπεζα και IBAN -->
+    <div class="acct">
+      <p class="who">ΟΝΟΜΑ ΔΙΚΑΙΟΥΧΟΥ 1</p>
+      <p class="bank">Τράπεζα</p>
+      <div class="iban-row">
+        <div class="iban" data-iban="GR0000000000000000000000000">GR00 0000 0000 0000 0000 0000 000</div>
+        <button class="copy" type="button">Αντιγραφή</button>
+      </div>
+    </div>
+
+    <!-- ΛΟΓΑΡΙΑΣΜΟΣ 2: αλλάξτε όνομα, τράπεζα και IBAN -->
+    <div class="acct">
+      <p class="who">ΟΝΟΜΑ ΔΙΚΑΙΟΥΧΟΥ 2</p>
+      <p class="bank">Τράπεζα</p>
+      <div class="iban-row">
+        <div class="iban" data-iban="GR0000000000000000000000000">GR00 0000 0000 0000 0000 0000 000</div>
+        <button class="copy" type="button">Αντιγραφή</button>
+      </div>
+    </div>
+
+    <p class="or">ή άμεσα μέσω Revolut</p>
+    <a class="btn btn-ghost" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7m5 0 6 7"/></svg>
+      revolut.me/kyriakosdi
+    </a>
+  </section>
+
+  <div class="divider"><img src="sprig.png" alt=""></div>
+
+  <footer>
+    <p>Με αγάπη,</p>
+    <p><em>Κυριάκος &amp; Βασιλική</em></p>
+  </footer>
+</main>
+
+<div class="toast" id="toast">Το IBAN αντιγράφηκε</div>
+
+<script>
+  // Google Calendar link
+  (function () {
+    var p = new URLSearchParams({
+      action: "TEMPLATE",
+      text: "Γάμος Κυριάκου & Βασιλικής",
+      dates: "20270704T090000Z/20270704T103000Z",
+      location: "Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος, Μεταμόρφωση Αττικής",
+      details: "Η τελετή θα πραγματοποιηθεί στις 12:00.\nΟδηγίες: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49"
+    });
+    document.getElementById("gcal").href = "https://calendar.google.com/calendar/render?" + p.toString();
+  })();
+
+  // Copy IBAN (without spaces)
+  var toast = document.getElementById("toast"), t;
+  function showToast() {
+    toast.classList.add("show"); clearTimeout(t);
+    t = setTimeout(function () { toast.classList.remove("show"); }, 1800);
+  }
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var iban = btn.parentNode.querySelector(".iban").getAttribute("data-iban").replace(/\s+/g, "");
+      var done = function () {
+        btn.textContent = "✓ Έγινε"; btn.classList.add("done"); showToast();
+        setTimeout(function () { btn.textContent = "Αντιγραφή"; btn.classList.remove("done"); }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(iban).then(done, function () { fallbackCopy(iban); done(); });
+      } else { fallbackCopy(iban); done(); }
+    });
+  });
+</script>
+</body>
+</html>

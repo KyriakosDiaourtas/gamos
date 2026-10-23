@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Kyriakos & Vasiliki//Wedding//EL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:gamos-kyriakos-vasiliki-20270704@wedding
+DTSTAMP:20261023T100000Z
+DTSTART:20270704T090000Z
+DTEND:20270704T103000Z
+SUMMARY:Γάμος Κυριάκου & Βασιλικής
+LOCATION:Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος\, Μεταμόρφωση Αττικής
+DESCRIPTION:Η τελετή θα πραγματοποιηθεί στις 12:00.\nΟδηγίες: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49
+URL:https://maps.app.goo.gl/adzhtZ4EweFL3Ea49
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Γάμος Κυριάκου & Βασιλικής
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
