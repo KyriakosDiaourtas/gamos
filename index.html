@@ -95,6 +95,15 @@
     border-radius: 3px; font: inherit; font-size: 16px; cursor: pointer;
   }
   .copy.done { background: var(--olive); color: #fff; }
+  .btn-pay { flex-direction: column; gap: 8px; padding: 14px 18px; }
+  .pay-main { display: flex; align-items: center; gap: 10px; }
+  .pay-methods { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 8px;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--olive-soft);
+    font-size: 14px; color: var(--olive); line-height: 1.4;
+  }
+  .chip svg { width: 16px; height: 16px; }
   .or { color: var(--muted); font-style: italic; margin: 22px 0 4px; }
 
   footer { text-align: center; color: var(--muted); font-size: 16px; margin-top: 30px; }
@@ -175,9 +184,21 @@
     </div>
 
     <p class="or">ή με κάρτα και <span id="wallet">Apple Pay</span> μέσω Revolut</p>
-    <a class="btn btn-ghost" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7m5 0 6 7"/></svg>
-      revolut.me/kyriakosdi
+    <a class="btn btn-ghost btn-pay" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
+      <span class="pay-main">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7m5 0 6 7"/></svg>
+        revolut.me/kyriakosdi
+      </span>
+      <span class="pay-methods">
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19M6 15h4"/></svg>
+          Κάρτα
+        </span>
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18.5h3"/><path d="M12 7.2c1.4 0 2.6 1.2 2.6 2.6M12 9.2c.3 0 .6.3.6.6" stroke-linecap="round"/></svg>
+          <span class="wallet-name">Apple Pay</span>
+        </span>
+      </span>
     </a>
   </section>
 
@@ -195,6 +216,7 @@
   // Google Pay για Android, Apple Pay για τα υπόλοιπα
   if (/android/i.test(navigator.userAgent)) {
     document.getElementById("wallet").textContent = "Google Pay";
+    document.querySelectorAll(".wallet-name").forEach(function (el) { el.textContent = "Google Pay"; });
   }
 
   // Google Calendar link
