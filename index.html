@@ -174,7 +174,7 @@
       </div>
     </div>
 
-    <p class="or">ή με κάρτα και Apple Pay μέσω Revolut</p>
+    <p class="or">ή με κάρτα και <span id="wallet">Apple Pay</span> μέσω Revolut</p>
     <a class="btn btn-ghost" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7m5 0 6 7"/></svg>
       revolut.me/kyriakosdi
@@ -192,6 +192,11 @@
 <div class="toast" id="toast">Το IBAN αντιγράφηκε</div>
 
 <script>
+  // Google Pay για Android, Apple Pay για τα υπόλοιπα
+  if (/android/i.test(navigator.userAgent)) {
+    document.getElementById("wallet").textContent = "Google Pay";
+  }
+
   // Google Calendar link
   (function () {
     var p = new URLSearchParams({
