@@ -101,9 +101,12 @@
   .chip {
     display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 8px;
     border: 1px solid var(--line); border-radius: 999px; background: var(--olive-soft);
-    font-size: 14px; color: var(--olive); line-height: 1.4;
+    font-size: 14px; color: var(--olive); line-height: 1.4; height: 32px;
   }
   .chip svg { width: 16px; height: 16px; }
+  .chip-brand { background: #fff; padding: 0 10px; height: 32px; }
+  .chip-brand img { height: 30px; width: auto; display: block; }
+  .brand-revolut { width: 20px; height: 20px; flex: none; }
   .or { color: var(--muted); font-style: italic; margin: 22px 0 4px; }
 
   footer { text-align: center; color: var(--muted); font-size: 16px; margin-top: 30px; }
@@ -186,7 +189,7 @@
     <p class="or">ή με κάρτα και <span id="wallet">Apple Pay</span> μέσω Revolut</p>
     <a class="btn btn-ghost btn-pay" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
       <span class="pay-main">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 20V4h6a4.5 4.5 0 0 1 0 9H7m5 0 6 7"/></svg>
+        <img class="brand-revolut" src="https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/revolut.svg" alt="Revolut" width="20" height="20">
         revolut.me/kyriakosdi
       </span>
       <span class="pay-methods">
@@ -194,9 +197,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19M6 15h4"/></svg>
           Κάρτα
         </span>
-        <span class="chip">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18.5h3"/><path d="M12 7.2c1.4 0 2.6 1.2 2.6 2.6M12 9.2c.3 0 .6.3.6.6" stroke-linecap="round"/></svg>
-          <span class="wallet-name">Apple Pay</span>
+        <span class="chip chip-brand">
+          <img id="wallet-logo" src="https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/applepay.svg" alt="Apple Pay">
         </span>
       </span>
     </a>
@@ -216,7 +218,7 @@
   // Google Pay για Android, Apple Pay για τα υπόλοιπα
   if (/android/i.test(navigator.userAgent)) {
     document.getElementById("wallet").textContent = "Google Pay";
-    document.querySelectorAll(".wallet-name").forEach(function (el) { el.textContent = "Google Pay"; });
+    var wl = document.getElementById("wallet-logo"); wl.src = "https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/googlepay.svg"; wl.alt = "Google Pay";
   }
 
   // Google Calendar link
