@@ -104,9 +104,11 @@
     font-size: 14px; color: var(--olive); line-height: 1.4; height: 32px;
   }
   .chip svg { width: 16px; height: 16px; }
-  .chip-brand { background: #fff; padding: 0 10px; height: 32px; }
-  .chip-brand img { height: 30px; width: auto; display: block; }
-  .brand-revolut { width: 20px; height: 20px; flex: none; }
+  .chip-brand { padding: 0 10px; height: 32px; }
+  .mark { display: block; flex: none; background-color: var(--olive);
+    -webkit-mask: var(--src) center / contain no-repeat; mask: var(--src) center / contain no-repeat; }
+  .chip-brand .mark { width: 30px; height: 30px; }
+  .brand-revolut { width: 20px; height: 20px; }
   .or { color: var(--muted); font-style: italic; margin: 22px 0 4px; }
 
   footer { text-align: center; color: var(--muted); font-size: 16px; margin-top: 30px; }
@@ -189,7 +191,7 @@
     <p class="or">ή με κάρτα και <span id="wallet">Apple Pay</span> μέσω Revolut</p>
     <a class="btn btn-ghost btn-pay" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
       <span class="pay-main">
-        <img class="brand-revolut" src="https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/revolut.svg" alt="Revolut" width="20" height="20">
+        <span class="mark brand-revolut" role="img" aria-label="Revolut" style="--src:url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/revolut.svg)"></span>
         revolut.me/kyriakosdi
       </span>
       <span class="pay-methods">
@@ -198,7 +200,7 @@
           Κάρτα
         </span>
         <span class="chip chip-brand">
-          <img id="wallet-logo" src="https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/applepay.svg" alt="Apple Pay">
+          <span class="mark" id="wallet-logo" role="img" aria-label="Apple Pay" style="--src:url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/applepay.svg)"></span>
         </span>
       </span>
     </a>
@@ -218,7 +220,7 @@
   // Google Pay για Android, Apple Pay για τα υπόλοιπα
   if (/android/i.test(navigator.userAgent)) {
     document.getElementById("wallet").textContent = "Google Pay";
-    var wl = document.getElementById("wallet-logo"); wl.src = "https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/googlepay.svg"; wl.alt = "Google Pay";
+    var wl = document.getElementById("wallet-logo"); wl.style.setProperty("--src", "url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/googlepay.svg)"); wl.setAttribute("aria-label", "Google Pay");
   }
 
   // Google Calendar link
