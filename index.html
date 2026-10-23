@@ -108,7 +108,7 @@
   .mark { display: block; flex: none; background-color: var(--olive);
     -webkit-mask: var(--src) center / contain no-repeat; mask: var(--src) center / contain no-repeat; }
   .chip-brand .mark { width: 30px; height: 30px; }
-  .brand-revolut { width: 20px; height: 20px; }
+  .chip-brand .brand-revolut { width: 18px; height: 18px; }
   .or { color: var(--muted); font-style: italic; margin: 22px 0 4px; }
 
   footer { text-align: center; color: var(--muted); font-size: 16px; margin-top: 30px; }
@@ -191,10 +191,12 @@
     <p class="or">ή με κάρτα και <span id="wallet">Apple Pay</span> μέσω Revolut</p>
     <a class="btn btn-ghost btn-pay" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
       <span class="pay-main">
-        <span class="mark brand-revolut" role="img" aria-label="Revolut" style="--src:url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/revolut.svg)"></span>
         revolut.me/kyriakosdi
       </span>
       <span class="pay-methods">
+        <span class="chip chip-brand">
+          <span class="mark brand-revolut" role="img" aria-label="Revolut" style="--src:url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/revolut.svg)"></span>
+        </span>
         <span class="chip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19M6 15h4"/></svg>
           Κάρτα
