@@ -36,7 +36,9 @@
     font-weight: 400; font-style: italic; font-size: clamp(40px, 11vw, 56px);
     line-height: 1.05; margin: 18px 0 14px;
   }
-  h1 .amp { display: block; font-size: .6em; color: var(--gold); margin: 2px 0; }
+  .amp { font-style: normal; font-weight: 400; color: var(--gold); }
+  h1 .amp { display: block; font-size: .55em; line-height: 1.2; margin: 4px 0; }
+  .gift-sprig { width: 40px; height: auto; display: block; margin: 0 auto 14px; }
   .date { font-size: 22px; margin: 0; }
   .time { color: var(--muted); font-size: 17px; margin: 2px 0 0; }
 
@@ -139,8 +141,8 @@
   </section>
 
   <section>
-    <h2>Ευχές</h2>
-    <p class="intro">Η παρουσία σας είναι το πιο όμορφο δώρο. Για όσους επιθυμούν να μας ευχηθούν και με αυτόν τον τρόπο:</p>
+    <img class="gift-sprig" src="sprig.png" alt="">
+    <p class="intro">Η παρουσία σας στη μεγάλη μας μέρα είναι για εμάς το πιο πολύτιμο δώρο. Για όσους θα ήθελαν, παρ’ όλα αυτά, να μας ευχηθούν και με έναν δικό τους τρόπο, παραθέτουμε τους λογαριασμούς μας.</p>
 
     <!-- ΛΟΓΑΡΙΑΣΜΟΣ 1: αλλάξτε όνομα, τράπεζα και IBAN -->
     <div class="acct">
@@ -173,7 +175,7 @@
 
   <footer>
     <p>Με αγάπη,</p>
-    <p><em>Κυριάκος &amp; Βασιλική</em></p>
+    <p><em>Κυριάκος <span class="amp">&amp;</span> Βασιλική</em></p>
   </footer>
 </main>
 
