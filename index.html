@@ -126,32 +126,32 @@
 <main>
 
   <header>
-    <p class="kicker">Με χαρά σας προσκαλούμε<br>στον γάμο μας</p>
-    <h1>Κυριάκος<span class="amp">&amp;</span>Βασιλική</h1>
-    <p class="date">Κυριακή, 4 Ιουλίου 2027</p>
-    <p class="time">Η τελετή στις 12:00</p>
+    <p class="kicker" data-i18n="kicker">Με χαρά σας προσκαλούμε<br>στον γάμο μας</p>
+    <h1 data-i18n="names">Κυριάκος<span class="amp">&amp;</span>Βασιλική</h1>
+    <p class="date" data-i18n="date">Κυριακή, 4 Ιουλίου 2027</p>
+    <p class="time" data-i18n="time">Η τελετή στις 12:00</p>
   </header>
 
   <div class="divider"><img src="sprig.png" alt=""></div>
 
   <section>
-    <h2>Η τελετή</h2>
-    <img class="church-img" src="church.jpg" alt="Ο Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος">
-    <p class="venue">Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος</p>
-    <p class="place">Μεταμόρφωση Αττικής</p>
+    <h2 data-i18n="ceremony">Η τελετή</h2>
+    <img class="church-img" data-i18n-alt="churchAlt" src="church.jpg" alt="Ο Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος">
+    <p class="venue" data-i18n="venue">Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος</p>
+    <p class="place" data-i18n="place">Μεταμόρφωση Αττικής</p>
     <a class="btn btn-primary" href="https://maps.app.goo.gl/adzhtZ4EweFL3Ea49" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-      Οδηγίες στους Χάρτες
+      <span data-i18n="directions">Οδηγίες στους Χάρτες</span>
     </a>
   </section>
 
   <section>
-    <h2>Κρατήστε την ημερομηνία</h2>
+    <h2 data-i18n="saveDate">Κρατήστε την ημερομηνία</h2>
     <a class="btn btn-primary" id="gcal" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>
       Google Calendar
     </a>
-    <a class="btn btn-ghost" href="gamos.ics" download="gamos-kyriakos-vasiliki.ics">
+    <a class="btn btn-ghost" id="ics" href="gamos.ics" download="gamos-kyriakos-vasiliki.ics">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15l2.5 2.5 2.5-2.5"/></svg>
       iPhone / Outlook
     </a>
@@ -159,10 +159,10 @@
 
   <section>
     <img class="gift-sprig" src="sprig.png" alt="">
-    <p class="intro">Η παρουσία σας στη μεγάλη μας μέρα είναι για εμάς το πιο πολύτιμο δώρο. Για όσους θα ήθελαν να μας προσφέρουν κάτι, παραθέτουμε παρακάτω τους λογαριασμούς μας.</p>
+    <p class="intro" data-i18n="intro">Η παρουσία σας στη μεγάλη μας μέρα είναι για εμάς το πιο πολύτιμο δώρο. Για όσους θα ήθελαν να μας προσφέρουν κάτι, παραθέτουμε παρακάτω τους λογαριασμούς μας.</p>
 
     <div class="acct">
-      <p class="who">Κυριάκος-Μιχαήλ Διαούρτας</p>
+      <p class="who" data-i18n="kyr">Κυριάκος-Μιχαήλ Διαούρτας</p>
       <p class="bank">Alpha Bank</p>
       <div class="iban-row">
         <div class="iban" data-iban="GR6701401390139002340046427">GR67 0140 1390 1390 0234 0046 427</div>
@@ -171,7 +171,7 @@
     </div>
 
     <div class="acct">
-      <p class="who">Βασιλική-Ευαγγελία Μανιού</p>
+      <p class="who" data-i18n="vas">Βασιλική-Ευαγγελία Μανιού</p>
       <p class="bank">Eurobank</p>
       <div class="iban-row">
         <div class="iban" data-iban="GR1902600250000470202806302">GR19 0260 0250 0004 7020 2806 302</div>
@@ -180,15 +180,15 @@
     </div>
 
     <div class="acct">
-      <p class="who">Βασιλική-Ευαγγελία Μανιού</p>
-      <p class="bank">Εθνική Τράπεζα</p>
+      <p class="who" data-i18n="vas">Βασιλική-Ευαγγελία Μανιού</p>
+      <p class="bank" data-i18n="nbg">Εθνική Τράπεζα</p>
       <div class="iban-row">
         <div class="iban" data-iban="GR6501101810000018100691247">GR65 0110 1810 0000 1810 0691 247</div>
         <button class="copy" type="button">Αντιγραφή</button>
       </div>
     </div>
 
-    <p class="or">ή με κάρτα και <span id="wallet">Apple Pay</span> μέσω Revolut</p>
+    <p class="or" id="or">ή με κάρτα και Apple Pay μέσω Revolut</p>
     <a class="btn btn-ghost btn-pay" href="https://revolut.me/kyriakosdi" target="_blank" rel="noopener">
       <span class="pay-main">
         revolut.me/kyriakosdi
@@ -196,7 +196,7 @@
       <span class="pay-methods">
         <span class="chip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 9.5h19M6 15h4"/></svg>
-          Κάρτα
+          <span data-i18n="card">Κάρτα</span>
         </span>
         <span class="chip chip-brand">
           <span class="mark" id="wallet-logo" role="img" aria-label="Apple Pay" style="--src:url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/applepay.svg)"></span>
@@ -211,17 +211,75 @@
   <div class="divider"><img src="sprig.png" alt=""></div>
 
   <footer>
-    <p>Με αγάπη,</p>
-    <p><em>Κυριάκος <span class="amp">&amp;</span> Βασιλική</em></p>
+    <p data-i18n="love">Με αγάπη,</p>
+    <p><em data-i18n="sign">Κυριάκος <span class="amp">&amp;</span> Βασιλική</em></p>
   </footer>
 </main>
 
 <div class="toast" id="toast">Το IBAN αντιγράφηκε</div>
 
 <script>
+  // ---- Γλώσσα: Ελληνικά αν το κινητό έχει ελληνικά στις γλώσσες του, αλλιώς Αγγλικά ----
+  var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]);
+  var forced = new URLSearchParams(location.search).get("lang");
+  var EN = forced ? forced === "en" : !langs.some(function (l) { return /^el\b/i.test(l); });
+  var ANDROID = /android/i.test(navigator.userAgent);
+  var WALLET = ANDROID ? "Google Pay" : "Apple Pay";
+
+  var T = {
+    title: "Kyriakos & Vasiliki · 4 July 2027",
+    kicker: "We joyfully invite you<br>to our wedding",
+    names: 'Kyriakos<span class="amp">&amp;</span>Vasiliki',
+    date: "Sunday, 4 July 2027",
+    time: "The ceremony begins at 12:00 noon",
+    ceremony: "The ceremony",
+    churchAlt: "The Holy Cathedral of the Transfiguration of the Saviour",
+    venue: "Holy Cathedral of the Transfiguration of the Saviour",
+    place: "Metamorfosi, Attica · Athens, Greece",
+    directions: "Directions in Maps",
+    saveDate: "Save the date",
+    intro: "Your presence on our special day is the most precious gift to us. For those who would like to offer something, our account details are listed below.",
+    kyr: "Kyriakos-Michail Diaourtas",
+    vas: "Vasiliki-Evangelia Maniou",
+    nbg: "National Bank of Greece",
+    card: "Card",
+    love: "With love,",
+    sign: 'Kyriakos <span class="amp">&amp;</span> Vasiliki'
+  };
+  var L = EN ? {
+    copy: "Copy", copied: "✓ Copied", toast: "IBAN copied",
+    or: "or by card and " + WALLET + " via Revolut",
+    calTitle: "Wedding of Kyriakos & Vasiliki",
+    calLoc: "Holy Cathedral of the Transfiguration of the Saviour, Metamorfosi, Attica, Greece",
+    calDetails: "The ceremony begins at 12:00.\nDirections: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49",
+    ics: "gamos-en.ics"
+  } : {
+    copy: "Αντιγραφή", copied: "✓ Έγινε", toast: "Το IBAN αντιγράφηκε",
+    or: "ή με κάρτα και " + WALLET + " μέσω Revolut",
+    calTitle: "Γάμος Κυριάκου & Βασιλικής",
+    calLoc: "Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος, Μεταμόρφωση Αττικής",
+    calDetails: "Η τελετή θα πραγματοποιηθεί στις 12:00.\nΟδηγίες: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49",
+    ics: "gamos.ics"
+  };
+
+  if (EN) {
+    document.documentElement.lang = "en";
+    document.title = T.title;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n"); if (T[k]) el.innerHTML = T[k];
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      el.alt = T[el.getAttribute("data-i18n-alt")];
+    });
+    document.querySelectorAll(".copy").forEach(function (b) { b.textContent = L.copy; });
+  }
+  document.getElementById("toast").textContent = L.toast;
+  document.getElementById("or").textContent = L.or;
+  var icsLink = document.getElementById("ics");
+  icsLink.href = L.ics; icsLink.setAttribute("download", EN ? "wedding-kyriakos-vasiliki.ics" : "gamos-kyriakos-vasiliki.ics");
+
   // Google Pay για Android, Apple Pay για τα υπόλοιπα
-  if (/android/i.test(navigator.userAgent)) {
-    document.getElementById("wallet").textContent = "Google Pay";
+  if (ANDROID) {
     var wl = document.getElementById("wallet-logo"); wl.style.setProperty("--src", "url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/googlepay.svg)"); wl.setAttribute("aria-label", "Google Pay");
   }
 
@@ -229,10 +287,10 @@
   (function () {
     var p = new URLSearchParams({
       action: "TEMPLATE",
-      text: "Γάμος Κυριάκου & Βασιλικής",
+      text: L.calTitle,
       dates: "20270704T090000Z/20270704T103000Z",
-      location: "Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος, Μεταμόρφωση Αττικής",
-      details: "Η τελετή θα πραγματοποιηθεί στις 12:00.\nΟδηγίες: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49"
+      location: L.calLoc,
+      details: L.calDetails
     });
     document.getElementById("gcal").href = "https://calendar.google.com/calendar/render?" + p.toString();
   })();
@@ -254,8 +312,8 @@
     btn.addEventListener("click", function () {
       var iban = btn.parentNode.querySelector(".iban").getAttribute("data-iban").replace(/\s+/g, "");
       var done = function () {
-        btn.textContent = "✓ Έγινε"; btn.classList.add("done"); showToast();
-        setTimeout(function () { btn.textContent = "Αντιγραφή"; btn.classList.remove("done"); }, 2000);
+        btn.textContent = L.copied; btn.classList.add("done"); showToast();
+        setTimeout(function () { btn.textContent = L.copy; btn.classList.remove("done"); }, 2000);
       };
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(iban).then(done, function () { fallbackCopy(iban); done(); });

@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Kyriakos & Vasiliki//Wedding//EL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wedding-kyriakos-vasiliki-20270704-en@wedding
+DTSTAMP:20261023T100000Z
+DTSTART:20270704T090000Z
+DTEND:20270704T103000Z
+SUMMARY:Wedding of Kyriakos & Vasiliki
+LOCATION:Holy Cathedral of the Transfiguration of the Saviour\, Metamorfosi\, Attica\, Greece
+DESCRIPTION:The ceremony begins at 12:00.\nDirections: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49
+URL:https://maps.app.goo.gl/adzhtZ4EweFL3Ea49
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Wedding of Kyriakos & Vasiliki
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
