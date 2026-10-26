@@ -119,11 +119,20 @@
     background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 3px; font-size: 16px;
     opacity: 0; transition: opacity .2s, transform .2s; pointer-events: none;
   }
+  main { position: relative; }
+  .lang-btn {
+    position: absolute; top: 14px; right: 16px; padding: 4px 6px;
+    background: none; border: 0; cursor: pointer;
+    font: inherit; font-size: 12px; letter-spacing: .2em; color: var(--muted); opacity: .75;
+    border-bottom: 1px solid var(--line);
+  }
+  .lang-btn:hover { opacity: 1; color: var(--olive); }
   .toast.show { opacity: 1; transform: translate(-50%, 0); }
 </style>
 </head>
 <body>
 <main>
+  <button class="lang-btn" id="langBtn" type="button" aria-label="English">EN</button>
 
   <header>
     <p class="kicker" data-i18n="kicker">Με χαρά σας προσκαλούμε<br>στον γάμο μας</p>
@@ -219,10 +228,10 @@
 <div class="toast" id="toast">Το IBAN αντιγράφηκε</div>
 
 <script>
-  // ---- Γλώσσα: Ελληνικά αν το κινητό έχει ελληνικά στις γλώσσες του, αλλιώς Αγγλικά ----
-  var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""]);
+  // ---- Γλώσσα: προεπιλογή Ελληνικά, κουμπί για Αγγλικά (θυμάται την επιλογή) ----
   var forced = new URLSearchParams(location.search).get("lang");
-  var EN = forced ? forced === "en" : !langs.some(function (l) { return /^el\b/i.test(l); });
+  var saved = null; try { saved = localStorage.getItem("lang"); } catch (e) {}
+  var EN = (forced || saved) === "en";
   var ANDROID = /android/i.test(navigator.userAgent);
   var WALLET = ANDROID ? "Google Pay" : "Apple Pay";
 
@@ -246,54 +255,60 @@
     love: "With love,",
     sign: 'Kyriakos <span class="amp">&amp;</span> Vasiliki'
   };
-  var L = EN ? {
-    copy: "Copy", copied: "✓ Copied", toast: "IBAN copied",
-    or: "or by card and " + WALLET + " via Revolut",
-    calTitle: "Wedding of Kyriakos & Vasiliki",
-    calLoc: "Holy Cathedral of the Transfiguration of the Saviour, Metamorfosi, Attica, Greece",
-    calDetails: "The ceremony begins at 12:00.\nDirections: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49",
-    ics: "gamos-en.ics"
-  } : {
-    copy: "Αντιγραφή", copied: "✓ Έγινε", toast: "Το IBAN αντιγράφηκε",
-    or: "ή με κάρτα και " + WALLET + " μέσω Revolut",
-    calTitle: "Γάμος Κυριάκου & Βασιλικής",
-    calLoc: "Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος, Μεταμόρφωση Αττικής",
-    calDetails: "Η τελετή θα πραγματοποιηθεί στις 12:00.\nΟδηγίες: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49",
-    ics: "gamos.ics"
+  var LS = {
+    en: {
+      copy: "Copy", copied: "✓ Copied", toast: "IBAN copied",
+      or: "or by card and " + WALLET + " via Revolut",
+      calTitle: "Wedding of Kyriakos & Vasiliki",
+      calLoc: "Holy Cathedral of the Transfiguration of the Saviour, Metamorfosi, Attica, Greece",
+      calDetails: "The ceremony begins at 12:00.\nDirections: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49",
+      ics: "gamos-en.ics", icsName: "wedding-kyriakos-vasiliki.ics", btn: "ΕΛ", btnLabel: "Ελληνικά"
+    },
+    el: {
+      copy: "Αντιγραφή", copied: "✓ Έγινε", toast: "Το IBAN αντιγράφηκε",
+      or: "ή με κάρτα και " + WALLET + " μέσω Revolut",
+      calTitle: "Γάμος Κυριάκου & Βασιλικής",
+      calLoc: "Ιερός Καθεδρικός Ναός Μεταμορφώσεως του Σωτήρος, Μεταμόρφωση Αττικής",
+      calDetails: "Η τελετή θα πραγματοποιηθεί στις 12:00.\nΟδηγίες: https://maps.app.goo.gl/adzhtZ4EweFL3Ea49",
+      ics: "gamos.ics", icsName: "gamos-kyriakos-vasiliki.ics", btn: "EN", btnLabel: "English"
+    }
   };
+  var L;
 
-  if (EN) {
-    document.documentElement.lang = "en";
-    document.title = T.title;
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var k = el.getAttribute("data-i18n"); if (T[k]) el.innerHTML = T[k];
+  // κρατάμε τα ελληνικά κείμενα της σελίδας για επιστροφή
+  var GR = { title: document.title };
+  document.querySelectorAll("[data-i18n]").forEach(function (el) { GR[el.getAttribute("data-i18n")] = el.innerHTML; });
+  document.querySelectorAll("[data-i18n-alt]").forEach(function (el) { GR[el.getAttribute("data-i18n-alt")] = el.alt; });
+
+  function applyLang(en) {
+    var D = en ? T : GR; L = en ? LS.en : LS.el;
+    document.documentElement.lang = en ? "en" : "el";
+    document.title = D.title;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) { el.innerHTML = D[el.getAttribute("data-i18n")]; });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) { el.alt = D[el.getAttribute("data-i18n-alt")]; });
+    document.querySelectorAll(".copy").forEach(function (b) { b.textContent = L.copy; b.classList.remove("done"); });
+    document.getElementById("toast").textContent = L.toast;
+    document.getElementById("or").textContent = L.or;
+    var icsLink = document.getElementById("ics");
+    icsLink.href = L.ics; icsLink.setAttribute("download", L.icsName);
+    var p = new URLSearchParams({
+      action: "TEMPLATE", text: L.calTitle, dates: "20270704T090000Z/20270704T103000Z",
+      location: L.calLoc, details: L.calDetails
     });
-    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
-      el.alt = T[el.getAttribute("data-i18n-alt")];
-    });
-    document.querySelectorAll(".copy").forEach(function (b) { b.textContent = L.copy; });
+    document.getElementById("gcal").href = "https://calendar.google.com/calendar/render?" + p.toString();
+    var lb = document.getElementById("langBtn");
+    lb.textContent = L.btn; lb.setAttribute("aria-label", L.btnLabel);
   }
-  document.getElementById("toast").textContent = L.toast;
-  document.getElementById("or").textContent = L.or;
-  var icsLink = document.getElementById("ics");
-  icsLink.href = L.ics; icsLink.setAttribute("download", EN ? "wedding-kyriakos-vasiliki.ics" : "gamos-kyriakos-vasiliki.ics");
+  applyLang(EN);
+  document.getElementById("langBtn").addEventListener("click", function () {
+    EN = !EN; applyLang(EN);
+    try { localStorage.setItem("lang", EN ? "en" : "el"); } catch (e) {}
+  });
 
   // Google Pay για Android, Apple Pay για τα υπόλοιπα
   if (ANDROID) {
     var wl = document.getElementById("wallet-logo"); wl.style.setProperty("--src", "url(https://cdn.jsdelivr.net/npm/simple-icons@16.35.0/icons/googlepay.svg)"); wl.setAttribute("aria-label", "Google Pay");
   }
-
-  // Google Calendar link
-  (function () {
-    var p = new URLSearchParams({
-      action: "TEMPLATE",
-      text: L.calTitle,
-      dates: "20270704T090000Z/20270704T103000Z",
-      location: L.calLoc,
-      details: L.calDetails
-    });
-    document.getElementById("gcal").href = "https://calendar.google.com/calendar/render?" + p.toString();
-  })();
 
   // Copy IBAN (without spaces)
   var toast = document.getElementById("toast"), t;
